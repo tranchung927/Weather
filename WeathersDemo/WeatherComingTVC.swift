@@ -25,13 +25,7 @@ class WeatherComingTVC: UITableViewController {
         }
         didSet{
             let dayCurrent = weatherDay?.date ?? 0
-            let create =  Date(timeIntervalSince1970: dayCurrent)
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "VI")
-            
-            let day = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: create) - 1]
-            dayOfWeek.text = day
-            
+            dayOfWeek.text = dayWeek(day: dayCurrent)
         }
     }
     override func viewDidLoad() {
@@ -51,6 +45,28 @@ class WeatherComingTVC: UITableViewController {
         self.weatherDay = DataServices.shared.weatherForecasts?.weatherOfDays[0]
             maxDegree.text = "\(weatherDay?.maxTemp_Date ?? 0)"
             minDegree.text = "\(weatherDay?.minTemp_Date ?? 0)"
+        for index in 0..<dayOfWeekCell.count {
+            
+            guard let date = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].date else {
+                return
+            }
+            dayOfWeekCell[index].text = dayWeek(day: date)
+            
+            guard let icon = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].icon_Date else {
+                return
+            }
+            iconCell[index].downloadImage(from: icon)
+            
+            guard let temMax = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].maxTemp_Date else {
+                return
+            }
+            maxDegreeCell[index].text = "\(temMax)"
+            
+            guard let temMin = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].minTemp_Date else {
+                return
+            }
+            minDegreeCell[index].text = "\(temMin)"
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -62,7 +78,6 @@ class WeatherComingTVC: UITableViewController {
 }
 extension WeatherComingTVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 

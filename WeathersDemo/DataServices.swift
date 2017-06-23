@@ -60,6 +60,6 @@ class DataServices {
                 completedBlock(json)
             }
         }
-        task.resume()
+        task.resume() 
     }
 }
