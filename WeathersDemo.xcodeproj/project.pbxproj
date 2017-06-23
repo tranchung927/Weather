@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F2398EEC1EF7B7EE00D30D11 /* WeatherHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */; };
 		F23C01D71EF775D800AC6B45 /* Languge.json in Resources */ = {isa = PBXBuildFile; fileRef = F23C01D61EF775D800AC6B45 /* Languge.json */; };
-		F244B6FD1EF0C3F60092683E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B6FC1EF0C3F60092683E /* Weather.swift */; };
 		F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B6FE1EF0C7230092683E /* DataServices.swift */; };
 		F25F282C1EFA25E000238FB5 /* WeatherComingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25F282B1EFA25E000238FB5 /* WeatherComingTVC.swift */; };
 		F26BCEEB1EFC9F2700AF0504 /* 7DayWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = F26BCEEA1EFC9F2700AF0504 /* 7DayWeather.json */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHourCell.swift; sourceTree = "<group>"; };
 		F23C01D61EF775D800AC6B45 /* Languge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languge.json; sourceTree = "<group>"; };
-		F244B6FC1EF0C3F60092683E /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F244B6FE1EF0C7230092683E /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		F24C7EE41EFB4352000B12C5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		F25F282B1EFA25E000238FB5 /* WeatherComingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherComingTVC.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				F24C7EE41EFB4352000B12C5 /* MyPlayground.playground */,
-				F244B6FC1EF0C3F60092683E /* Weather.swift */,
 				F275531A1EEE952E0093F7AC /* Assets.xcassets */,
 				F275531C1EEE952E0093F7AC /* LaunchScreen.storyboard */,
 				F275531F1EEE952E0093F7AC /* Info.plist */,
@@ -204,7 +201,6 @@
 			files = (
 				F273AE541EF21F44000C4F7F /* NotificationKeys.swift in Sources */,
 				F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */,
-				F244B6FD1EF0C3F60092683E /* Weather.swift in Sources */,
 				F26BCEED1EFC9F5C00AF0504 /* Weather7Days.swift in Sources */,
 				F27553131EEE952E0093F7AC /* ContainerVC.swift in Sources */,
 				F27553191EEE952E0093F7AC /* WeathersDemo.xcdatamodeld in Sources */,
