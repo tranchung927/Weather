@@ -16,7 +16,6 @@ struct WeatherForecast {
     var imageURLCurrent: String
     var city: String
     var timeCurrent: TimeInterval
-    
     var weatherOfDays: [WeatherOfDay] = []
     
     init?(json: JSON) {

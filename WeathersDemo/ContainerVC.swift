@@ -39,12 +39,16 @@ class ContainerVC: UIViewController {
     }
     
     func updateData() {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
         self.weather = DataServices.shared.weatherForecasts
     }
 
 }
 extension ContainerVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DataServices.shared.searchKey = searchBar.text ?? ""
     }
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {

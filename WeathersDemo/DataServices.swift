@@ -17,13 +17,22 @@ class DataServices {
             weatherAtLocation(locationString: searchKey)
         }
     }
+    
     var weatherForecasts: WeatherForecast?
     
+    func getHour() -> Array<WeatherOFHour> {
+        if let timeCurrent = weatherForecasts?.timeCurrent {
+            return (weatherForecasts?.weatherOfDays[0].weatherOfHours.filter{ $0.time_Hour > timeCurrent })!
+        } else {
+            return (weatherForecasts?.weatherOfDays[0].weatherOfHours) ?? []
+        }
+    }
+
     private func  weatherAtLocation(locationString: String) {
         let baseUrl = "http://api.apixu.com/v1/forecast.json?&days=7"
         var urlString = baseUrl
         var parameter : Dictionary<String, String> = [:]
-        parameter["q"] = searchKey
+        parameter["q"] = locationString
         parameter["key"] = "f3d902b438a3451c92605731171906"
         
         for (key,value) in parameter {
@@ -39,6 +48,7 @@ class DataServices {
         makeDataTaskRequest(request: urlRequest){
             self.weatherForecasts = WeatherForecast(json: $0)
             NotificationCenter.default.post(name: NotificationKey.data, object: nil)
+            print(self.getHour().count)
         }
     }
 
