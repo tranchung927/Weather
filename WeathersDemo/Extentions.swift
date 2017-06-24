@@ -39,12 +39,4 @@ extension WeatherComingTVC {
         let hourVI = dateFormatter.string(from: create)
         return hourVI
     }
-    
-    func stringFromTimeInterval(interval: TimeInterval) -> Int {
-        let date = Date(timeIntervalSince1970: interval)
-        let calendar = Calendar.current
-        let comp = calendar.dateComponents([.hour], from: date)
-        let hour = comp.hour
-        return hour!
-    }
 }

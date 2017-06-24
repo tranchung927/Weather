@@ -34,7 +34,6 @@ class WeatherComingTVC: UITableViewController {
         super.viewDidLoad()
         today.isHidden = true
         colectionView.isHidden = true
-        colectionView.backgroundColor = UIColor.clear
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
     }
     
@@ -46,7 +45,6 @@ class WeatherComingTVC: UITableViewController {
         today.isHidden = false
         colectionView.isHidden = false
         colectionView.reloadData()
-        colectionView.backgroundColor = UIColor.darkGray
         self.weatherDay = DataServices.shared.weatherForecasts?.weatherOfDays[0]
             maxDegree.text = "\(weatherDay?.maxTemp_Date ?? 0)"
             minDegree.text = "\(weatherDay?.minTemp_Date ?? 0)"
@@ -79,7 +77,6 @@ class WeatherComingTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return colectionView
     }
-//    let dayCurrent: Dictionary<AnyHashable,Any>
 }
 extension WeatherComingTVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
