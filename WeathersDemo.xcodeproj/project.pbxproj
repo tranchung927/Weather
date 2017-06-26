@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F206E8361F00B19700F04553 /* Geofencing.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F206E8351F00B19700F04553 /* Geofencing.gpx */; };
 		F2398EEC1EF7B7EE00D30D11 /* WeatherHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */; };
 		F23C01D71EF775D800AC6B45 /* Languge.json in Resources */ = {isa = PBXBuildFile; fileRef = F23C01D61EF775D800AC6B45 /* Languge.json */; };
 		F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B6FE1EF0C7230092683E /* DataServices.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F206E8351F00B19700F04553 /* Geofencing.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Geofencing.gpx; sourceTree = "<group>"; };
 		F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHourCell.swift; sourceTree = "<group>"; };
 		F23C01D61EF775D800AC6B45 /* Languge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languge.json; sourceTree = "<group>"; };
 		F244B6FE1EF0C7230092683E /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				F273AE551EF23536000C4F7F /* Extentions.swift */,
 				F26BCEEA1EFC9F2700AF0504 /* 7DayWeather.json */,
 				F23C01D61EF775D800AC6B45 /* Languge.json */,
+				F206E8351F00B19700F04553 /* Geofencing.gpx */,
 			);
 			name = Supports;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				F23C01D71EF775D800AC6B45 /* Languge.json in Resources */,
 				F275531E1EEE952E0093F7AC /* LaunchScreen.storyboard in Resources */,
+				F206E8361F00B19700F04553 /* Geofencing.gpx in Resources */,
 				F275531B1EEE952E0093F7AC /* Assets.xcassets in Resources */,
 				F26BCEEB1EFC9F2700AF0504 /* 7DayWeather.json in Resources */,
 				F27553161EEE952E0093F7AC /* Main.storyboard in Resources */,
@@ -335,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = exemple.com.WeathersDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -347,6 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = exemple.com.WeathersDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
