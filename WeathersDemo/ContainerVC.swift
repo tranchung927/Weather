@@ -43,27 +43,26 @@ class ContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
+        registerNotification()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+    func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
+    }
     func updateData() {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
         self.weather = DataServices.shared.weatherForecasts
     }
-
 }
 
 extension ContainerVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-        print("User latitude = \(userLocation.coordinate.latitude)")
-        print("User longitude = \(userLocation.coordinate.longitude)")
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in

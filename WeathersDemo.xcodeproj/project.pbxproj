@@ -29,7 +29,6 @@
 		F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHourCell.swift; sourceTree = "<group>"; };
 		F23C01D61EF775D800AC6B45 /* Languge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languge.json; sourceTree = "<group>"; };
 		F244B6FE1EF0C7230092683E /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
-		F24C7EE41EFB4352000B12C5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		F25F282B1EFA25E000238FB5 /* WeatherComingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherComingTVC.swift; sourceTree = "<group>"; };
 		F26BCEEA1EFC9F2700AF0504 /* 7DayWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 7DayWeather.json; sourceTree = "<group>"; };
 		F26BCEEC1EFC9F5C00AF0504 /* Weather7Days.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7Days.swift; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		F273AE521EF21F09000C4F7F /* Supports */ = {
 			isa = PBXGroup;
 			children = (
-				F24C7EE41EFB4352000B12C5 /* MyPlayground.playground */,
 				F275531A1EEE952E0093F7AC /* Assets.xcassets */,
 				F275531C1EEE952E0093F7AC /* LaunchScreen.storyboard */,
 				F275531F1EEE952E0093F7AC /* Info.plist */,

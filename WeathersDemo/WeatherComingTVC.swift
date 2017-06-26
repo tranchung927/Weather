@@ -84,7 +84,7 @@ extension WeatherComingTVC: UICollectionViewDataSource, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataServices.shared.getHour().count+1
+        return DataServices.shared.weatherOfHour.count+1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,7 +94,7 @@ extension WeatherComingTVC: UICollectionViewDataSource, UICollectionViewDelegate
             cell.item.dowloadImage(from: DataServices.shared.weatherForecasts?.imageURLCurrent ?? "")
             cell.degree.text = "\(DataServices.shared.weatherForecasts?.degreeCurrent ?? 0)ºC"
         } else {
-            let weather = DataServices.shared.getHour()[indexPath.row-1]
+            let weather = DataServices.shared.weatherOfHour[indexPath.row-1]
             cell.degree.text = "\(weather.tempC_Hour)ºC"
             cell.item.dowloadImage(from: weather.icon_Hour)
             cell.time.text = "\(hourDay(hour: weather.time_Hour))"

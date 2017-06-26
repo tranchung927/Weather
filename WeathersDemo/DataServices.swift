@@ -4,8 +4,6 @@
 //
 //  Created by Tran Chung on 6/14/17.
 //  Copyright © 2017 Tran Chung. All rights reserved.
-//  http://api.apixu.com/v1/forecast.json?key=19c25d79bf234b12af0101146171206&q=Paris
-//  http://api.apixu.com/v1/forecast.json?key=f3d902b438a3451c92605731171906&q=Hanoi&days=10
 
 import UIKit
 
@@ -20,11 +18,23 @@ class DataServices {
     
     var weatherForecasts: WeatherForecast?
     
-    func getHour() -> Array<WeatherOFHour> {
+    private var _weatherOfHour: [WeatherOFHour]?
+    
+    var weatherOfHour: [WeatherOFHour] {
+        get {
+            if _weatherOfHour == nil {
+                getHour()
+            }
+            return _weatherOfHour ?? []
+        }
+        set {
+            _weatherOfHour = newValue
+        }
+    }
+    
+    func getHour(){
         if let timeCurrent = weatherForecasts?.timeCurrent {
-            return (weatherForecasts?.weatherOfDays[0].weatherOfHours.filter{ $0.time_Hour > timeCurrent })!
-        } else {
-            return (weatherForecasts?.weatherOfDays[0].weatherOfHours) ?? []
+            _weatherOfHour = weatherForecasts?.weatherOfDays[0].weatherOfHours.filter{ $0.time_Hour > timeCurrent }
         }
     }
 
@@ -48,7 +58,6 @@ class DataServices {
         makeDataTaskRequest(request: urlRequest){
             self.weatherForecasts = WeatherForecast(json: $0)
             NotificationCenter.default.post(name: NotificationKey.data, object: nil)
-            print(self.getHour().count)
         }
     }
 
