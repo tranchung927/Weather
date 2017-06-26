@@ -34,11 +34,15 @@ class WeatherComingTVC: UITableViewController {
         super.viewDidLoad()
         today.isHidden = true
         colectionView.isHidden = true
-        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
+        registerNotificationWeather()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func registerNotificationWeather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
     }
 
     func updateData() {

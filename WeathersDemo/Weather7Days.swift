@@ -11,7 +11,7 @@ import Foundation
 typealias JSON = Dictionary<AnyHashable, Any>
 
 struct WeatherForecast {
-    var degreeCurrent: Double
+    var degreeCurrent: Int
     var conditionCurrent: String
     var imageURLCurrent: String
     var city: String
@@ -27,7 +27,7 @@ struct WeatherForecast {
         }
         
         guard let current = json["current"] as? JSON,
-            let tempCurrent = current["temp_c"] as? Double,
+            let tempCurrent = current["temp_c"] as? Int,
             let last_updated_epoch = current["last_updated_epoch"] as? TimeInterval
         else {
             return nil
@@ -63,8 +63,8 @@ struct WeatherForecast {
 class WeatherOfDay {
     var date: TimeInterval
     var icon_Date: String
-    var maxTemp_Date: Double
-    var minTemp_Date: Double
+    var maxTemp_Date: Int
+    var minTemp_Date: Int
     var weatherOfHours: [WeatherOFHour] = []
     
     init?(json: JSON) {
@@ -74,8 +74,8 @@ class WeatherOfDay {
         }
         
         guard let day = json["day"] as? JSON,
-            let tempMax = day["maxtemp_c"] as? Double,
-            let tempMin = day["mintemp_c"] as? Double
+            let tempMax = day["maxtemp_c"] as? Int,
+            let tempMin = day["mintemp_c"] as? Int
         else {
             return nil
         }
@@ -106,7 +106,7 @@ class WeatherOfDay {
 class WeatherOFHour {
     
     var time_Hour: TimeInterval
-    var tempC_Hour: Double
+    var tempC_Hour: Int
     var icon_Hour: String
     
     init?(json: JSON) {
@@ -115,7 +115,7 @@ class WeatherOFHour {
             return nil
         }
         
-        guard let tempHour = json["temp_c"] as? Double else {
+        guard let tempHour = json["temp_c"] as? Int else {
             return nil
         }
         
