@@ -46,11 +46,6 @@ class ContainerVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
