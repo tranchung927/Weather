@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F202E9C21F01DE2D00796540 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202E9C11F01DE2D00796540 /* ConvertHelper.swift */; };
-		F202E9C41F01DF0400796540 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202E9C31F01DF0400796540 /* LocationServices.swift */; };
 		F206E8361F00B19700F04553 /* Geofencing.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F206E8351F00B19700F04553 /* Geofencing.gpx */; };
+		F228E93E1F1DF030007412BC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F228E93D1F1DF030007412BC /* Reachability.swift */; };
 		F2398EEC1EF7B7EE00D30D11 /* WeatherHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */; };
 		F23C01D71EF775D800AC6B45 /* Languge.json in Resources */ = {isa = PBXBuildFile; fileRef = F23C01D61EF775D800AC6B45 /* Languge.json */; };
 		F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B6FE1EF0C7230092683E /* DataServices.swift */; };
@@ -28,8 +28,8 @@
 
 /* Begin PBXFileReference section */
 		F202E9C11F01DE2D00796540 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
-		F202E9C31F01DF0400796540 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		F206E8351F00B19700F04553 /* Geofencing.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Geofencing.gpx; sourceTree = "<group>"; };
+		F228E93D1F1DF030007412BC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F2398EEB1EF7B7EE00D30D11 /* WeatherHourCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHourCell.swift; sourceTree = "<group>"; };
 		F23C01D61EF775D800AC6B45 /* Languge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languge.json; sourceTree = "<group>"; };
 		F244B6FE1EF0C7230092683E /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				F244B6FE1EF0C7230092683E /* DataServices.swift */,
-				F202E9C31F01DF0400796540 /* LocationServices.swift */,
+				F228E93D1F1DF030007412BC /* Reachability.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -207,8 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F202E9C41F01DF0400796540 /* LocationServices.swift in Sources */,
 				F273AE541EF21F44000C4F7F /* NotificationKeys.swift in Sources */,
+				F228E93E1F1DF030007412BC /* Reachability.swift in Sources */,
 				F202E9C21F01DE2D00796540 /* ConvertHelper.swift in Sources */,
 				F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */,
 				F26BCEED1EFC9F5C00AF0504 /* Weather7Days.swift in Sources */,

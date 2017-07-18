@@ -44,13 +44,45 @@ class ContainerVC: UIViewController {
         super.viewDidLoad()
         locationManager.delegate = self
         registerNotification()
+        startNotifier()
+        Reach().monitorReachabilityChanges(host: "google.com")
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    func startNotifier() {
+        NotificationCenter.default.addObserver(self, selector: #selector(alertInternet), name: ReachabilityStatusChangedNotification, object: nil)
+    }
+    // Alert Internet
+    func alert(isConnect: Bool) {
+        let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+        if isConnect == false {
+            locationManager.stopUpdatingLocation()
+            present(controller, animated: true, completion: nil)
+        } else {
+            locationManager.startUpdatingHeading()
+            locationManager.startUpdatingLocation()
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    // Check status internet
+    func alertInternet() {
+        let status = Reach().connnectionStatus()
+        
+        switch status {
+        case .online(.wifi):
+            print("Connected WiFi")
+            alert(isConnect: true)
+        case .online(.wwan):
+            print("Connected WWAN")
+        case .offline, .unknow:
+            print("Not connected")
+            alert(isConnect: false)
+        }
     }
     func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: NotificationKey.data, object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     func updateData() {
         DispatchQueue.main.async {
@@ -66,23 +98,22 @@ extension ContainerVC: CLLocationManagerDelegate {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            
-            // Place details
-            var placeMark: CLPlacemark!
-            placeMark = placemarks?[0]
-            
-            // City
-            if let city = placeMark.addressDictionary?["City"] as? String {
-                let trimmedString = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
-                let cityCurrent = ConverHelper.convertVietNam(trimmedString)
-                DataServices.shared.searchKey = cityCurrent
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                print(trimmedString)
-            }
-            
-            // Country
-            if let country = placeMark.addressDictionary?["Country"] as? NSString {
-                print(country)
+            if error == nil {
+                // Place details
+                var placeMark: CLPlacemark!
+                placeMark = placemarks?[0]
+                // City
+                if let city = placeMark.addressDictionary?["City"] as? String {
+                    let trimmedString = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+                    let cityCurrent = ConverHelper.convertVietNam(trimmedString)
+                    DataServices.shared.searchKey = cityCurrent
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                    print(trimmedString)
+                }
+                // Country
+                if let country = placeMark.addressDictionary?["Country"] as? NSString {
+                    print(country)
+                }
             }
             manager.stopUpdatingLocation()
         })
