@@ -20,7 +20,6 @@ class WeatherComingTVC: UITableViewController {
     @IBOutlet weak var colectionView: UICollectionView!
     
     @IBOutlet weak var today: UILabel!
-    var identifierCountry = "VI"
     var weatherDay: WeatherOfDay? {
         willSet {
             self.weatherDay = DataServices.shared.weatherForecasts?.weatherOfDays[0]

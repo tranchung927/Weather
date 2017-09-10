@@ -6,7 +6,7 @@
 //  Copyright © 2017 Tran Chung. All rights reserved.
 
 import UIKit
-
+let identifierCountry = "JA"
 class DataServices {
     static let shared : DataServices = DataServices()
     
@@ -44,6 +44,7 @@ class DataServices {
         var parameter : Dictionary<String, String> = [:]
         parameter["q"] = locationString
         parameter["key"] = "247c306dc2cc4c528dd61409170709"
+        parameter["lang"] = identifierCountry
         
         for (key,value) in parameter {
             urlString += "&" + key + "=" + value
