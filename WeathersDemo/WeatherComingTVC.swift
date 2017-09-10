@@ -27,7 +27,7 @@ class WeatherComingTVC: UITableViewController {
         }
         didSet{
             let dayCurrent = weatherDay?.date ?? 0
-            dayOfWeek.text = dayWeek(day: dayCurrent)
+            dayOfWeek.text = dayCurrent.dayWeek(identifier: identifierCountry)
         }
     }
     override func viewDidLoad() {
@@ -57,7 +57,7 @@ class WeatherComingTVC: UITableViewController {
             guard let date = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].date else {
                 return
             }
-            dayOfWeekCell[index].text = dayWeek(day: date)
+            dayOfWeekCell[index].text = date.dayWeek(identifier: identifierCountry)
             
             guard let icon = DataServices.shared.weatherForecasts?.weatherOfDays[index+1].icon_Date else {
                 return
@@ -101,7 +101,7 @@ extension WeatherComingTVC: UICollectionViewDataSource, UICollectionViewDelegate
             let weather = DataServices.shared.weatherOfHour[indexPath.row-1]
             cell.degree.text = "\(weather.tempC_Hour)ºC"
             cell.item.dowloadImage(from: weather.icon_Hour)
-            cell.time.text = "\(hourDay(hour: weather.time_Hour))"
+            cell.time.text = "\(weather.time_Hour.hourDay(identifier: identifierCountry))"
         }
         return cell
     }

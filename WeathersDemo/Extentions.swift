@@ -21,22 +21,21 @@ extension UIImageView {
         task.resume()
     }
 }
-extension WeatherComingTVC {
+extension TimeInterval {
     
-    func dayWeek(day: TimeInterval) -> String {
-        let create = Date(timeIntervalSince1970: day)
+    func dayWeek(identifier: String) -> String {
+        let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: identifierCountry)
-        let dayVI = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: create) - 1]
-        return dayVI
+        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.locale = Locale(identifier: identifier)
+        return dateFormatter.string(from: date)
     }
     
-    func hourDay(hour: TimeInterval) -> String {
-        let create = Date(timeIntervalSince1970: hour)
+    func hourDay(identifier: String) -> String {
+        let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: identifierCountry)
+        dateFormatter.locale = Locale(identifier: identifier)
         dateFormatter.timeStyle = .short
-        let hourVI = dateFormatter.string(from: create)
-        return hourVI
+        return dateFormatter.string(from: date)
     }
 }
