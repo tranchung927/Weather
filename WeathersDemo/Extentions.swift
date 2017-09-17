@@ -39,3 +39,11 @@ extension TimeInterval {
         return dateFormatter.string(from: date)
     }
 }
+extension String {
+    var asciiString: String? {
+        if let data = self.data(using: String.Encoding.ascii, allowLossyConversion: true){
+            return String.init(data: data, encoding: String.Encoding.ascii)
+        }
+        return nil
+    }
+}

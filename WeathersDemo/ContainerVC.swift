@@ -105,7 +105,8 @@ extension ContainerVC: CLLocationManagerDelegate {
                 // City
                 if let city = placeMark.addressDictionary?["City"] as? String {
                     let trimmedString = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
-                    let cityCurrent = ConverHelper.convertVietNam(trimmedString)
+//                    let cityCurrent = ConverHelper.convertVietNam(trimmedString)
+                    guard let cityCurrent = trimmedString.asciiString else { return }
                     DataServices.shared.searchKey = cityCurrent
                     UIApplication.shared.isNetworkActivityIndicatorVisible = true
                     print(trimmedString)
