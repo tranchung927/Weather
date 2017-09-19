@@ -14,6 +14,7 @@ class ContainerVC: UIViewController {
     @IBOutlet weak var nameLb: UILabel!
     @IBOutlet weak var conditonLb: UILabel!
     
+    @IBOutlet weak var imageWeather: UIImageView!
     var locationManager: CLLocationManager = {
         var locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -42,6 +43,7 @@ class ContainerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageWeather.loadGif(name: "rain")
         locationManager.delegate = self
         registerNotification()
         startNotifier()
