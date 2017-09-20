@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1FE5F91F7281FB00169C37 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1FE5F81F7281FB00169C37 /* UIImage+Gif.swift */; };
+		3B1FE5FB1F72820300169C37 /* rain.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B1FE5FA1F72820300169C37 /* rain.gif */; };
 		F202E9C21F01DE2D00796540 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202E9C11F01DE2D00796540 /* ConvertHelper.swift */; };
 		F206E8361F00B19700F04553 /* Geofencing.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F206E8351F00B19700F04553 /* Geofencing.gpx */; };
 		F228E93E1F1DF030007412BC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F228E93D1F1DF030007412BC /* Reachability.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B1FE5F81F7281FB00169C37 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		3B1FE5FA1F72820300169C37 /* rain.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rain.gif; sourceTree = "<group>"; };
 		F202E9C11F01DE2D00796540 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
 		F206E8351F00B19700F04553 /* Geofencing.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Geofencing.gpx; sourceTree = "<group>"; };
 		F228E93D1F1DF030007412BC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		F273AE521EF21F09000C4F7F /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				3B1FE5FA1F72820300169C37 /* rain.gif */,
+				3B1FE5F81F7281FB00169C37 /* UIImage+Gif.swift */,
 				F275531A1EEE952E0093F7AC /* Assets.xcassets */,
 				F275531C1EEE952E0093F7AC /* LaunchScreen.storyboard */,
 				F275531F1EEE952E0093F7AC /* Info.plist */,
@@ -191,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1FE5FB1F72820300169C37 /* rain.gif in Resources */,
 				F23C01D71EF775D800AC6B45 /* Languge.json in Resources */,
 				F275531E1EEE952E0093F7AC /* LaunchScreen.storyboard in Resources */,
 				F206E8361F00B19700F04553 /* Geofencing.gpx in Resources */,
@@ -213,6 +220,7 @@
 				F244B6FF1EF0C7230092683E /* DataServices.swift in Sources */,
 				F26BCEED1EFC9F5C00AF0504 /* Weather7Days.swift in Sources */,
 				F27553131EEE952E0093F7AC /* ContainerVC.swift in Sources */,
+				3B1FE5F91F7281FB00169C37 /* UIImage+Gif.swift in Sources */,
 				F27553191EEE952E0093F7AC /* WeathersDemo.xcdatamodeld in Sources */,
 				F25F282C1EFA25E000238FB5 /* WeatherComingTVC.swift in Sources */,
 				F27553111EEE952E0093F7AC /* AppDelegate.swift in Sources */,
